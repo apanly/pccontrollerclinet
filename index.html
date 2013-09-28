@@ -26,130 +26,213 @@
     <link rel="stylesheet" href="themes/style/neon.css">
     <!-- Transition theme. More available in /themes/transition/ or create your own. -->
     <link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+    <link rel="stylesheet" href="themes/style/ppt.css">
     <script src="js/modernizr.custom.js"></script>
 </head>
 <body class="deck-container">
 <!-- Begin slides -->
 <section class="slide" id="title-slide">
     <h1>哪些应该知道的流程</h1>
+
+    <h3>V仔</h3>
 </section>
 
-<section class="slide" id="how-to-overview">
-    <h2>How to Make a Deck</h2>
+<section class="slide" id="dct1">
+    <h2>DCT使用说明</h2>
     <ol>
         <li>
-            <h3>Write Slides</h3>
-            <p>Slide content is simple&nbsp;HTML.</p>
+            <h3>dct平台:http://dct.corp.anjuke.com</h3>
+
+            <p>* dct:database config tool,主要用来统一管理我们所有的数据库配置,便于维护</p>
         </li>
         <li>
-            <h3>Choose Themes</h3>
-            <p>One for slide styles and one for deck&nbsp;transitions.</p>
-        </li>
-        <li>
-            <h3>Include Extensions</h3>
-            <p>Add extra functionality to your deck, or leave it stripped&nbsp;down.</p>
+            <h3>什么情况需要提DCT需求?</h3>
+
+            <p>* 对于我们新增的每一个job,使用的每一个数据库配置名都需要我们check,如果没有就需要提申请</p>
+
+            <p>* 对于app,如果不认真check数据库配置,只有希望在beta环境最早发现</p>
+
+            <p style="float: left;display: block;">
+                <img src="bootstrap/img/dct1.png" class="lineimg"/>
+                <img src="bootstrap/img/dct2.png" class="lineimg"/>
+                <img src="bootstrap/img/dct3.png" class="lineimg"/>
+            </p>
+
         </li>
     </ol>
 </section>
 
-<section class="slide" id="markup">
-    <h2>The Markup</h2>
+<section class="slide" id="dct2">
+    <h2>DCT使用说明</h2>
+    <ol>
+        <li>
+            <h3>提dct需求需要如下信息</h3>
 
-    <p>Slides are just HTML elements with a class of <code>slide</code>.</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-        &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
-        &lt;ol&gt;
-        &lt;li&gt;
-        &lt;h3&gt;Write Slides&lt;/h3&gt;
-        &lt;p&gt;Slide content is simple HTML.&lt;/p&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-        &lt;h3&gt;Choose Themes&lt;/h3&gt;
-        &lt;p&gt;One for slide styles and one for deck transitions.&lt;/p&gt;
-        &lt;/li&gt;
-        &hellip;
-        &lt;/ol&gt;
-        &lt;/section&gt;</code></pre>
+            <p> * 放入哪个pool，可以在dct平台查看，例如anjuke_my,anjuke_city,anjuke_job这都是一个单独的一个pool<br/>
+                * 需要操作哪个数据库<br/>
+                * 读还是写<br/>
+                * 操作key的名称（在php中就是我们database.php中的config大数组的key，例如$config['master']=array()）<br/>
+                * 发邮件给兰春,Maple
+            </p>
+
+            <p><img src="bootstrap/img/dct4.png"/></p>
+        </li>
+    </ol>
 </section>
 
-<section class="slide" id="themes">
-    <h2>Style Themes</h2>
-
-    <p>Customizes the colors, typography, and layout of slide&nbsp;content.</p>
-    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/style-theme.css&quot;&gt;</code></pre>
-    <h2>Transition Themes</h2>
-
-    <p>Defines transitions between slides using CSS3 transitions. Less capable browsers fall back to cutaways. But
-        <strong>you</strong> aren&rsquo;t using <em>those</em> browsers to give your presentations, are&nbsp;you&hellip;
-    </p>
-    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/transition-theme.css&quot;&gt;</code></pre>
-</section>
-
-<section class="slide" id="extensions">
-    <h2>Extensions</h2>
-
-    <p>Core gives you basic slide functionality with left and right arrow navigation, but you may want more. Here are
-        the ones included in this&nbsp;deck:</p>
-
+<section class="slide" id="dbrt1">
+    <h2>DBRT需求规范</h2>
     <ul>
-        <li class="slide" id="extensions-goto">
-            <strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number. Hit g, type in the slide
-            number, and hit&nbsp;enter.
+        <li>
+            新建DBRT的过程中,Component必须选择 DB-RT，Enviroment必须是线上环境
+            <pre>
+                <img src="bootstrap/img/dbrt1.png"/>
+            </pre>
         </li>
-
-        <li class="slide" id="extensions-hash">
-            <strong>deck.hash</strong>: Enables internal linking within slides, deep linking to individual slides, and
-            updates the address bar &amp; a permalink anchor with each slide&nbsp;change.
-        </li>
-
-        <li class="slide" id="extensions-menu">
-            <strong>deck.menu</strong>: Adds a menu view, letting you see all slides in a grid. Hit m to toggle to menu
-            view, continue navigating your deck, and hit m to return to normal view. Touch devices can double-tap the
-            deck to switch between&nbsp;views.
-        </li>
-
-        <li class="slide" id="extensions-navigation">
-            <strong>deck.navigation</strong>: Adds clickable left and right buttons for the less keyboard&nbsp;inclined.
-        </li>
-
-        <li class="slide" id="extensions-status">
-            <strong>deck.status</strong>: Adds a page number indicator. (current/total)
-        </li>
-
-        <li class="slide" id="extensions-scale">
-            <strong>deck.scale</strong>: Scales each slide to fit within the deck container using CSS Transforms for
-            those browsers that support them.
+        <li>
+            DBRT需求至少CC给上级主管,如若不符合此规则,DBA有权拒回此需求
         </li>
     </ul>
-
-    <p class="slide" id="extension-folders">Each extension folder in the download package contains the necessary
-        JavaScript, CSS, and HTML&nbsp;files. For a complete list of extension modules included in deck.js, check out
-        the&nbsp;<a href="http://imakewebthings.github.com/deck.js/docs">documentation</a>.</p>
 </section>
 
-<section class="slide" id="nested">
-    <h2>Nested Slides</h2>
-
-    <p>That last slide had a few steps. To create substeps in slides, just nest them:</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-        &lt;h2&gt;Extensions&lt;/h2&gt;
-        &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;
-        &lt;ul&gt;
-        &lt;li class=&quot;slide&quot;&gt;
-        &lt;h3&gt;deck.goto&lt;/h3&gt;
-        &lt;p&gt;Adds a shortcut key to jump to any slide number...&lt;/p&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-        &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-        &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;/section&gt;</code></pre>
+<section class="slide" id="dbrt2">
+    <h2>DBRT需求规范</h2>
+    <ul>
+        <li>
+            DBRT需求内容必须符合DBRT规范(http://wiki.corp.anjuke.com/index.php?title=DBRT规范)
+            <ol>
+                <li>
+                    预计该表每天的数据写入量？
+                </li>
+                <li>
+                    预计该表每天的数据查询次数？
+                </li>
+                <li>
+                    该表是否用于关键页面（如anjuke.com访问量排名前三的页面）
+                </li>
+                <li>
+                    是否有job在查询或更新这张表？
+                </li>
+                <li>
+                    附上主要的读写SQL
+                </li>
+                <li>
+                    建表语句必须要有自增主键
+                </li>
+                <li>
+                    要有字段注释和表注释，表注释中标注建表人
+                </li>
+                <li>
+                    预估新建表最终会稳定在多少数据量，对于会无限增长的表，预先给出数据清理方案
+                </li>
+            </ol>
+        </li>
+    </ul>
 </section>
 
-<section class="slide" id="elements-images">
-    <h2>Other Elements: Images</h2>
-    <img src="http://placekitten.com/600/375" alt="Kitties">
-    <pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
+<section class="slide" id="jobdepoy1">
+    <h2>如何部署job</h2>
+
+    <ul>
+        <li class="slide" id="job1">
+            <strong>job平台地址</strong>:http://newjob.corp.anjuke.com,使用域帐号登陆
+        </li>
+        <li class="slide" id="job2">
+            <strong>新增加一个job需要注意以下几个地方</strong>
+            <ol>
+                <li>关于环境的说明:php53_pay(支付中心专用) php53(php公用) java16_haopan(java好盘) java16_api(java api) java16_crm(java
+                    crm) java16(java公用)
+                </li>
+                <li>job日志存放规则：日志统一存放在/data1/logs/ 严禁随意乱放</li>
+                <li>关于php执行job命令的说明
+                    GA环境:/usr/bin/php /home/www/v2/jobs/launcher.php xxx<br/>
+                    Beta环境：/usr/bin/php /home/www/v2/jobs/launcher_beta.php xxx<br/>
+                    指定环境:/usr/bin/php /home/www/v2/jobs/launcher_version.php yyy xxx<br/>
+                </li>
+                <li>
+                    关于launcher_version.php的使用方法
+                    <ol>
+                        <li>目前所有的job机器都已经有了launcher_version.php，在/home/www/v2/jobs/ 目录下面</li>
+                        <li>使用方法如下<br/>
+                            [evans@app10-067 jobs] $ /usr/bin/php home/www/v2/jobs/launcher_version.php<br/>
+                            Usage: launcher_version.php {version} {php_file}<br/>
+                            --version 2013_36_16<br/>
+                            --php_file anjuke/5i5j.php(完整路劲是/home/www/release/v2/分支版本号/app-jobs/bin 下的文件路径)<br/>
+                            举例如下：<br/>
+                            如果我们要跑分支2013_37_02版本,/usr/bin/php /home/www/v2/jobs/launcher_version.php 2013_37_02
+                            anjuke/360sitemap_community.php
+                        </li>
+                    </ol>
+                </li>
+                <li>关于job运行周期：对于常驻job，我们会默认设置为129600分钟（90天），因为我们会每90天进行一次job清理工作</li>
+            </ol>
+        </li>
+
+
+    </ul>
+</section>
+
+<section class="slide" id="jobdepoy2">
+    <h2>如何部署job</h2>
+    <ul>
+        <li>
+            <strong>job的报警规则说明</strong>
+            <ol>
+                <li>运行时间过短和过长的报警 如果运行时间小于 job填写运行时长的六分之一 或者 大于job填写时长的1.5倍 都会报警</li>
+                <li>数据库标记正在运行，但是在机器上找不到运行的进程</li>
+                <li>数据库表示没有运行，但是在机器上发现了进程</li>
+                <li>该运行未运行 在预订的运行时间没有运行起来</li>
+                <li>job执行命令异常 代码问题
+                    <img src="bootstrap/img/job1.png"/>
+                </li>
+            </ol>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="online">
+    <h2>线上服务器基本结构</h2>
+    <ul>
+        <li>我们的代码一般放在/home/www/release/v2/xxx下面(xxx表示版本号，例如2013_37_09)</li>
+        <li>我们的入口文件和最外层配置：/home/www/v2/xxx (xxx可能是anjuke，jobs，mendian)中的index.php</li>
+        <li>查看v2框架的错误日志：/var/log/user.log</li>
+        <li>所有的日志文件必须放在：/data1/logs/</li>
+    </ul>
+    <pre style="display: block;float: left;width: 100%">
+        <img src="bootstrap/img/online1.png" class="lineimg"/>
+        <img src="bootstrap/img/online2.png" class="lineimg"/>
+    </pre>
+</section>
+
+<section class="slide" id="office">
+    <h2>office如何连接线上数据库</h2>
+
+    <p>DBA专门为我们提供了线上的slave,给PD在office查询线上数据、查看线上表 结构及索引、做select语句的性能评估</p>
+    <p>wiki地址：http://wiki.corp.anjuke.com/index.php?title=All,加入导航之家</p>
+    <p>请各位在以后成为新同学的Buddy的时候，不要忘记告诉他们</p>
+</section>
+
+<section class="slide" id="git">
+    <h2>Git权限申请流程</h2>
+    <p>域帐号登录git.corp.anjuke.com,账户设置->添加公钥(ssh-keygen),然后就可以对我们公司的Git为所欲为了</p>
+	<pre>
+        <img src="bootstrap/img/git1.png"/>
+	</pre>
+</section>
+
+<section class="slide" id="ideliver">
+    <h2>ideliver可以干什么</h2>
+    <ul>
+        <li>ideliver:集成开发,测试,发布自动化保证软件稳定性</li>
+        <li>新同学使用ideliver需要开通对应的权限,否则无法进行项目相关的所有操作</li>
+        <li>
+            开通权限需要以下信息
+            <ol>
+                <li class="slide" id="ideliverjoy">我们不需要姓名,身高,性别,喜好,是否有对象等等</li>
+                <li class="slide" id="idelivertips">我们需要邮箱,姓名,职位(开发或测试),邮件给周乐钦同学</li>
+            </ol>
+        </li>
+    </ul>
 </section>
 
 <section class="slide" id="elements-blockquotes">
