@@ -11,14 +11,20 @@ function controll(cmd){
 }
 
 $(document).ready(function(){
-    $("#ui li").each(function(index){
-        $(this).click({'flag':index},function(event){
-            if(index===0){
-                controll("prev");
-            }else{
-                controll("next");
-            }
-
-        });
+    $("#ninebox .home").click(function(){
+        controll(1);
+    });
+    $("#ninebox .prev").click(function(){
+        controll("prev");
+    });
+    $("#ninebox .refresh").click(function(){
+        controll("refresh");
+    });
+    $("#ninebox .next").click(function(){
+        controll("next");
+    });
+    $("#ninebox .go").click(function(){
+        var page=parseInt($.trim($("#page").val()));
+        controll(page);
     });
 });

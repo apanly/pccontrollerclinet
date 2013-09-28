@@ -43,6 +43,8 @@ var util={
                     $(".deck-prev-link").click();
                  }else if(cmd=="next"){
                     $(".deck-next-link").click();
+                 }else if(cmd=="refresh"){
+                    window.location.href=window.location.href;
                  }else if(/^\d+$/.test(cmd)){
                      $("#goto-slide").val(cmd);
                      $(".goto-form").submit();
