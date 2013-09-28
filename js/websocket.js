@@ -3,7 +3,7 @@ var socket=null;
 var connectlimit=3;
 var util={
     init:function(){
-        this.host="127.0.0.1:1234";
+        this.host="192.168.192.191:1234";
         this.sconnect();
     },
     log:function(msg){
