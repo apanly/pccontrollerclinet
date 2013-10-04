@@ -1,14 +1,18 @@
 ;
 var socket=null;
 var connectlimit=3;
+var debug=false;
 var util={
     init:function(){
-        this.host="192.168.192.191:1234";
-        //this.host="127.0.0.1:1234";
+        if(debug){
+            this.host="127.0.0.1:1234";
+        }else{
+            this.host="192.168.192.191:1234";
+        }
         this.sconnect();
     },
     log:function(msg){
-        console.log(msg);
+        //console.log(msg);
     },
     close:function(){
         if(socket!=null){

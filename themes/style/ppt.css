@@ -3,3 +3,16 @@
     width: 400px;
     display: block;
 }
+#buddytip{
+    list-style: none;
+}
+#buddy1{
+    float: left;
+}
+#ppt li{
+    list-style: none outside none;
+}
+#ppt table img{
+    margin-left: 50px;
+}
+
