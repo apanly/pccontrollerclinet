@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script src="jquery-1.9.1.js"></script>
+    <script src="highcharts.js"></script>
+</head>
+<body>
+<div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            type:'GET',
+            url:"index.php",
+            dataType:'json',
+            success:function (data) {
+                $('#container').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    title: {
+                        text: 'Anjuke Pv'
+                    },
+                    xAxis:{
+                        categories:data.categories,
+                        labels:{
+                            step:10,
+                            formatter:function () {
+                                //return this.value;
+                                return  Highcharts.dateFormat('%m/%d', this.value);
+                            }
+                        }
+                    },
+                    tooltip:{
+                        valueSuffix:data.unit,
+                        formatter:function () {
+                            var tmpcontent= '<b>' + Highcharts.dateFormat('%Y-%m-%d', this.x) + '</b><br/>' +this.point.series.name+":"+ Highcharts.numberFormat(this.y,0) + data.unit;
+                            return tmpcontent;
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: "pv:("+data.unit+")"
+                        }
+                    },
+                    series:data.source
+                });
+            }
+        });
+
+    });
+</script>
+</body>
+</html>
