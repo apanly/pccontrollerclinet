@@ -2,7 +2,7 @@
 function dateToMicroTime($idate){
     return strtotime($idate." 08:00:00")*1000;
 }
-$resdata=file_get_contents("tt.log");
+$resdata=file_get_contents("totalrequest.log");
 if($resdata){
     $tmparr=explode("\n",$resdata);
     $data['unit']="W";
@@ -28,25 +28,26 @@ if($resdata){
 //    );
         echo $idate.",".getPv($idate)."\n";
     }
-    function getPv($idate){
-        $ch = curl_init();
-        $uri="http://knowing.corp.anjuke.com/chart/data?id_list=851%2C851&delta_list=0%2C-7&start={$idate}+00%3A00&end={$idate}+23%3A59&daily=false";
+}
+function getPv($idate){
+    $ch = curl_init();
+    $chartid=853;
+    $uri="http://knowing.corp.anjuke.com/chart/data?id_list={$chartid}%2C{$chartid}&delta_list=0%2C-7&start={$idate}+00%3A00&end={$idate}+23%3A59&daily=false";
 // 2. 设置选项，包括URL
-        curl_setopt($ch, CURLOPT_URL, $uri);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_URL, $uri);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
 // 3. 执行并获取HTML文档内容
-        $output = curl_exec($ch);
-        $tmparr=explode("],",$output);
-        $totalCnt=0;
-        foreach($tmparr as $item){
-            $tmp=explode(",",$item);
-            if($tmp[1]){
-                $totalCnt+=$tmp[1];
-            }
+    $output = curl_exec($ch);
+    $tmparr=explode("],",$output);
+    $totalCnt=0;
+    foreach($tmparr as $item){
+        $tmp=explode(",",$item);
+        if($tmp[1]){
+            $totalCnt+=$tmp[1];
         }
-// 4. 释放curl句柄
-        curl_close($ch);
-        return $totalCnt;
     }
+// 4. 释放curl句柄
+    curl_close($ch);
+    return $totalCnt;
 }
