@@ -61,24 +61,100 @@
         <li class="slide"><h3>use_boundable_styles与use_styles</h3></li>
         <li class="slide"><h3>use_boundable_javascripts与use_javascripts</h3></li>
         <li class="slide"><h3>use_component</h3></li>
+        <li class="slide"><h3>图片</h3></li>
     </ul>
 </section>
 
 <section class="slide">
-    <h2>CSS如何配置</h2>
+    <h2>CSS配置注意点</h2>
+    <ul>
+        <li class="slide"><h3>CSS中加载图片</h3></li>
+        <li class="slide"><h3>引用自己的CSS</h3></li>
+        <li class="slide"><h3>引用别人的CSS</h3></li>
+        <li class="slide"><h3>use_boundable_styles与use_styles有什么区别</h3></li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>CSS如何配置(续)--CSS中加载图片</h2>
+    <ul>
+        <li class="slide">记住在CSS文件头部放入<\?php apf_require_class("PageHelper"); ?></li>
+        <li class="slide">如何加载图片<\?php echo PageHelper::pure_static_url("/images/test.jpg");?></li>
+        <li class="slide">图片都存在Pages中:http://projects.dev.anjuke.com/svn/sites/pages</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>CSS如何配置(续)--引用CSS</h2>
+    <p>
+      引用CSS主要记住路径就好了,为什么会有变量<h3>$path</h3>
+        <img src="bootstrap/pptimages/3/css.jpg"/>
+    </p>
+</section>
+
+<section class="slide">
+    <h2>CSS如何配置(续)--CSS引入两种方法的区别</h2>
+    <p>use_boundable_styles与use_styles有什么区别</p>
+    <ul>
+        <li class="slide">use_boundable_styles:把配置的多个CSS文件压缩成一个CSS文件减少HTTP请求和大小</li>
+        <li class="slide">use_styles:不对配置的CSS文件处理?好像没什么用这个方法</li>
+    </ul>
 </section>
 
 <section class="slide">
     <h2>JS如何配置</h2>
+    <ul>
+        <li class="slide"><h3>引用自己的JS "pass"</h3></li>
+        <li class="slide"><h3>引用别人的JS "pass"</h3></li>
+        <li class="slide"><h3>use_boundable_javascripts与use_javascripts有什么区别</h3></li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>JS如何配置(续)--JS引入两种方法的区别</h2>
+    <p>use_boundable_styles和use_styles,use_styles主要用于加载不在本地的JS文件,所以才不压缩的</p>
+    <img src="bootstrap/pptimages/3/js.jpg"/>
 </section>
 
 <section class="slide">
     <h2>Component CSS和JS如何配置</h2>
+    <p>Component页面的JS和CSS往往没有加载,为什么?</p>
+    <img src="bootstrap/pptimages/3/component.png"/>
 </section>
 
 <section class="slide">
-    <h2>前端也可以在框架调试页面</h2>
+    <h2>图片被缓存了，怎么办，没办法，重命名</h2>
 </section>
+
+
+<section class="slide">
+    <h2>做一个独立的前端--写简单的php</h2>
+    <ul>
+        <li class="slide"><h3>在route.php添加路由规则</h3></li>
+        <li class="slide"><h3>写Controller php</h3></li>
+        <li class="slide"><h3>写page php</h3></li>
+        <li class="slide"><h3>写page phtml css js</h3></li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>配置是不是很复杂</h2>
+    <p>为什么框架把图片,CSS,JS配置搞的如此复杂?</p>
+    <ul>
+        <li class="slide"><h3>便于扩展</h3></li>
+        <li class="slide"><h3>统一压缩和缓存</h3></li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>测试环境</h2>
+</section>
+
+
+<section class="slide">
+    <h2>仓库对应关系</h2>
+</section>
+
 
 <section class="slide">
     <h1><p>掌声在哪里!!!<img width="300px" height="300px" src="bootstrap/pptimages/1/geili.gif"/></p></h1>
