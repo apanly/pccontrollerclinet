@@ -52,7 +52,8 @@
 </section>
 <section class="slide" id="pmt">
     <h2>神秘面纱:MVC是什么?</h2>
-    <p><img src="bootstrap/pptimages/3/v2flow.png"/></p>
+    <p style="float: right;"><img src="bootstrap/pptimages/3/v2flow.png"/></p>
+    <p style="float: left;"><img src="bootstrap/pptimages/3/mvc.png"/></p>
 </section>
 
 <section class="slide">
@@ -80,7 +81,7 @@
     <ul>
         <li class="slide">记住在CSS文件头部放入<\?php apf_require_class("PageHelper"); ?></li>
         <li class="slide">如何加载图片<\?php echo PageHelper::pure_static_url("/images/test.jpg");?></li>
-        <li class="slide">图片都存在Pages中:http://projects.dev.anjuke.com/svn/sites/pages</li>
+        <li class="slide">静态资源(不变的)放在:http://projects.dev.anjuke.com/svn/sites/pages</li>
     </ul>
 </section>
 
@@ -96,7 +97,7 @@
     <h2>CSS如何配置(续)--CSS引入两种方法的区别</h2>
     <p>use_boundable_styles与use_styles有什么区别</p>
     <ul>
-        <li class="slide">use_boundable_styles:把配置的多个CSS文件压缩成一个CSS文件减少HTTP请求和大小</li>
+        <li class="slide">use_boundable_styles:把配置的多个CSS文件压缩成一个CSS文件减少HTTP请求和大小, 可能需要修改的</li>
         <li class="slide">use_styles:不对配置的CSS文件处理?好像没什么用这个方法</li>
     </ul>
 </section>
@@ -123,18 +124,25 @@
 </section>
 
 <section class="slide">
-    <h2>图片被缓存了，怎么办，没办法，重命名</h2>
+    <h2>静态资源如何修改</h2>
+    <p>图片被缓存了,怎么办?<h3 class="slide">没办法，重命名</h3></p>
 </section>
 
 
 <section class="slide">
     <h2>做一个独立的前端--写简单的php</h2>
+    <p style="float:right;z-index: 9999;display: block;"><img src="bootstrap/pptimages/3/v2.jpg"/></p>
     <ul>
         <li class="slide"><h3>在route.php添加路由规则</h3></li>
         <li class="slide"><h3>写Controller php</h3></li>
         <li class="slide"><h3>写page php</h3></li>
         <li class="slide"><h3>写page phtml css js</h3></li>
     </ul>
+</section>
+
+<section class="slide">
+    <h2>做一个独立的前端--自动化</h2>
+    <p><img src="bootstrap/pptimages/3/robot.png"/></p>
 </section>
 
 <section class="slide">
@@ -148,11 +156,25 @@
 
 <section class="slide">
     <h2>测试环境</h2>
+    <p style="float:right;z-index: 9999;display: block;"><img src="bootstrap/pptimages/3/ideliverpg.jpg"/></p>
+    <ul>
+        <li class="slide"><h3>pgpmtxxx</h3></li>
+        <li class="slide"><h3>pgbugxxx</h3></li>
+        <li class="slide"><h3>my.anjuke.test</h3></li>
+        <li class="slide"><h3>PG如何更新图片</h3></li>
+    </ul>
 </section>
 
 
 <section class="slide">
     <h2>仓库对应关系</h2>
+    <ul>
+        <li class="slide">site/anjuke-broker与_ajkrepopool/anjuke_feature</li>
+        <li class="slide">site/ajk-broker与_ajkrepopool/ajk_feature</li>
+        <li class="slide">haozu/haozu-site与_ajkrepopool/haozu_feature</li>
+        <li class="slide">jinpu/jinpu-site与_ajkrepopool/jinpu_feature</li>
+        <li class="slide">anjuke/ajk-memdian与_ajkrepopool/memdian_feature</li>
+    </ul>
 </section>
 
 
